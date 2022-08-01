@@ -7,7 +7,7 @@
 ```
 curl -X GET "http://localhost:8080/api/weather?latitude=40.7483&longitude=-73.9856" | python -m json.tool
 ```
-Sample output:
+Sample output(for Santa Clara, CA):
 ```
 {
     "number": 5,
