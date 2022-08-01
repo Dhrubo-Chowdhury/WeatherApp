@@ -1,4 +1,4 @@
-# WeatherApp
+# WeatherApp in Java using cmd
 1. Install openjdk 11.0 and maven.
 2. put maven directory in the environment variables
 3. Open terminal/git bash and type mvn spingboot:run
