@@ -7,22 +7,22 @@
 ```
 curl -X GET "http://localhost:8080/api/weather?latitude=40.7483&longitude=-73.9856" | python -m json.tool
 ```
-Sample output(for Santa Clara, CA):
+Sample output(for Sunnyvale, CA):
 ```
 {
-    "number": 5,
+    "number": 6,
     "name": "Wednesday Night",
-    "startTime": "2022-08-03T18:00:00-05:00",
-    "endTime": "2022-08-04T06:00:00-05:00",
+    "startTime": "2022-08-03T18:00:00-07:00",
+    "endTime": "2022-08-04T06:00:00-07:00",
     "isDaytime": false,
-    "temperature": 77,
+    "temperature": 62,
     "temperatureUnit": "F",
     "temperatureTrend": null,
-    "windSpeed": "0 to 5 mph",
-    "windDirection": "S",
-    "icon": "https://api.weather.gov/icons/land/night/tsra_hi,80/tsra_hi,40?size=medium",
-    "shortForecast": "Showers And Thunderstorms",
-    "detailedForecast": "Showers and thunderstorms. Mostly cloudy, with a low around 77. South wind 0 to 5 mph. Chance of precipitation is 80%."
+    "windSpeed": "2 to 14 mph",
+    "windDirection": "WSW",
+    "icon": "https://api.weather.gov/icons/land/night/few?size=medium",
+    "shortForecast": "Mostly Clear",
+    "detailedForecast": "Mostly clear, with a low around 62."
 }
 ```
 
