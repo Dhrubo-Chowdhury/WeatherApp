@@ -1,4 +1,4 @@
-# WeatherApp in Java using cmd
+# WeatherApp in Java
 1. Install openjdk 11.0: https://access.redhat.com/documentation/en-us/openjdk/11/html-single/installing_and_using_openjdk_11_for_windows/index#installing_openjdk_archive
 2. Install maven: https://maven.apache.org/install.html
 3. Open terminal/git bash and type 
