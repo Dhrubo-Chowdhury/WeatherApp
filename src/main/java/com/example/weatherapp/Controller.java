@@ -33,10 +33,26 @@ public class Controller{
         Map<String, Object> properties = (Map<String, Object>) map.get("properties");
         String forecastString = (String) properties.get("forecast");
         RestTemplate restTemplate2 = new RestTemplate();
-        Map<String, Object> map2 = restTemplate2.getForObject(forecastString, Map.class);
-        Map<String, Object> properties2 = (Map<String, Object>) map2.get("properties");
-        List<Map<String, Object>> periods = (List) properties2.get("periods");
-        Map<String, Object> wednesdayNight = periods.get(5);
-        return wednesdayNight;
+        Map<String, Object> map2;
+        try{
+            map2 = restTemplate2.getForObject(firstUrl, Map.class);
+        } catch(Exception e){
+            Map<String, String> errorMap = new HashMap<>();
+            errorMap.put("Error", "Data Unavailable for the requested Point");
+            return errorMap;
+        }
+        //Map<String, Object> map2 = restTemplate2.getForObject(forecastString, Map.class);
+        if(map2.containsKey(properties)) {
+            Map<String, Object> properties2 = (Map<String, Object>) map2.get("properties");
+                    List<Map<String, Object>> periods = (List) properties2.get("periods");
+            for(Map<String, Object> mapIterate : periods){
+                if(mapIterate.get("name").equals("Wednesday Night")){
+                    return mapIterate;
+                }
+            }
+        }
+        Map<String, String> errorMap = new HashMap<>();
+        errorMap.put("Error", "Data Unavailable for the requested Point");
+        return errorMap;
     }
 }
